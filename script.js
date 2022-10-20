@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded' , () => {
     const ground = document.querySelector('.ground-moving')
 
     let birdLeft = 220
-    let birdBottom = 100
+       let birdBottom = 100
     let gravity = 3
     let isGameOver = false
     let gap = 430
-
+    
 
     function startGame() {
         birdBottom -= gravity
@@ -17,11 +17,14 @@ document.addEventListener('DOMContentLoaded' , () => {
     }
     let gameTimerId = setInterval(startGame, 20)
 
-    function control(e ) {
+  
+    function control(e) {
         if (e.keyCode === 32) {
             jump()
         }
     }
+
+ 
 
     function jump() {
         if (birdBottom < 500) birdBottom += 50
@@ -29,7 +32,6 @@ document.addEventListener('DOMContentLoaded' , () => {
         console.log(birdBottom)
     }
     document.addEventListener('keyup', control)
-
 
     function generateObstacle() {
         let obstacleLeft = 500
